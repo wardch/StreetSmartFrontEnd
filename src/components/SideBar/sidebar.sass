@@ -1,0 +1,61 @@
+.sidebar__table_of_streets
+  width: 100%
+  thead
+    text-align: center
+  tbody
+    tr
+      td
+        margin: 0px 15px
+
+.sidebar__image
+  width: 100%
+  margin: 25px 0px
+
+.sidebar__image-container
+  margin: 0px 10px
+
+.sidebar__span-correct_street_guess
+  color: green
+
+.sidebar__selector-container
+  margin-top: 80px
+
+.countdown-timer
+  position: absolute
+  width: 52px
+  height: 52px
+
+.countdown-timer__circle-container
+  svg
+    width: 52px
+    height: 52px
+    transform: rotateZ(-90deg)
+    position: absolute
+  circle
+    stroke-dasharray: 151px
+    stroke-dashoffset: 151px
+    stroke-linecap: butt
+    stroke-width: 4px
+    stroke: blue
+    fill: none
+  .countdown-timer__background-circle
+    stroke-dasharray: 151px
+    stroke-dashoffset: 0px
+    stroke-linecap: butt
+    stroke-width: 4px
+    stroke: green
+    fill: none
+
+.countdown-timer__text
+  position: absolute
+  top: 17px
+  width: 52px
+  font-size: 14px
+  font-weight: 600
+  text-align: center
+
+@keyframes countdown-animation
+  from
+    stroke-dashoffset: 0px
+  to
+    stroke-dashoffset: 151px

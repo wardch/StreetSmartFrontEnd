@@ -1,0 +1,45 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "semi": 2,
+    "no-debugger": "off",
+    "react/display-name": "off",
+    "eqeqeq": "error",
+    "no-var": "error",
+    "no-template-curly-in-string": "error",
+    "mocha/no-exclusive-tests": "error",
+    "jasmine/no-spec-dupes": 0,
+    "jasmine/no-suite-dupes": 0,
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }]
+  },
+  "env": {
+    "browser": true,
+    "jasmine": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "plugins": [
+    "react", "mocha", "jasmine"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jasmine/recommended"
+  ],
+  "globals": {
+    "process": false,
+    "Routes": false,
+    "global": false,
+    "context": false
+  }
+}
