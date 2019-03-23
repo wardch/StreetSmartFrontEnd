@@ -10,7 +10,7 @@ function SideBar({gameMode}) {
       if(gameMode === 'explore') {
         return( <ExploreGameSideBar/> )
       } else if (gameMode === 'playing') {
-        return( <PostPlayingSideBar/> )
+        return( <PlayGameSideBar/> )
       } else if (gameMode === 'post-playing') {
         return <PostPlayingSideBar/>
       }

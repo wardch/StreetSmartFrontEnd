@@ -3,11 +3,11 @@ import {connect} from 'react-redux'
 import ClickedFeaturesPhotos from './ClickedFeaturesPhotos'
 import PostGameModal from './PostGameModal'
 import {getGameTimeRemaining, getAllStreets, getGameMode} from '../../selectors/gameSelectors'
-import {openHighScoreModal} from '../../actions/sideBarActions'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 import SubmitHighScoreForm from './SubmitHighScoreForm'
 
 class PostPlayingSideBar extends Component {
@@ -96,8 +96,20 @@ class PostPlayingSideBar extends Component {
         <hr/>
         <Row>
           <ul>
-            <li><Button onClick={() =>  console.log('playin')} variant="primary" >Play Again</Button></li>
-            <li><Button variant="primary">View All HighScores</Button></li>
+            <li>
+              <Button variant="primary" >
+                <Link to="/">
+                  Play Again
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="primary" >
+                <Link to="/high_scores">
+                  View High Scores
+                </Link>
+              </Button>
+            </li>
             <li><Button onClick={() =>  this.setState({show: true})} variant="primary">View My Score</Button></li>
           </ul>
         </Row>
@@ -143,10 +155,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    openHighScoreModal: () => dispatch(openHighScoreModal())
-  }
+  return {}
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostPlayingSideBar)
