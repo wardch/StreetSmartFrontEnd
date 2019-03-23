@@ -1,6 +1,5 @@
 import {connect} from 'react-redux'
 import React, { Component } from 'react';
-import {simpleAction} from '../../actions/simpleAction'
 import Map from '../Map'
 import SideBar from '../SideBar'
 import './game.sass'
@@ -10,10 +9,6 @@ import Col from 'react-bootstrap/Col'
 
 
 class Game extends Component {
-  simpleAction = (event) => {
-    this.props.simpleAction()
-  }
-
   render() {
     return (
       <Row className='game-container'>
@@ -30,12 +25,9 @@ class Game extends Component {
 
 
 
-const mapStateToProps = state => ({
-  ...state
-})
+//TODO: make this a functional component
 
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
-})
+const mapStateToProps = state => ({})
+const mapDispatchToProps = dispatch => ({})
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Game));

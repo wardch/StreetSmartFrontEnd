@@ -38,6 +38,7 @@ export default function featureSelectedTransform(state, payload){
     selectionBoxStyle: setSelectionBoxStyle(currentSelectionBoxStyle, currentFeatureSelection, payload),
     streets: {
       ...state.streets,
+      popupOpen: true,
       currentFeatureSelection: payload,
       currentStreetClick: payload.properties
     }

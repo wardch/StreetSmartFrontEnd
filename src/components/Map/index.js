@@ -76,7 +76,7 @@ export class Map extends Component {
   _renderPopup() {
     const {featureProperties} = this.state;
 
-    if(featureProperties) {
+    if(featureProperties && this.props.popupOpen) {
       let [longitude, latitude] = featureProperties.centerPoint.split(',')
       return(
         <Popup tipSize={5}

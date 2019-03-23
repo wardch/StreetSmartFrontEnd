@@ -1,13 +1,16 @@
 import {connect} from 'react-redux'
 import React, { Component } from 'react';
-import {simpleAction} from '../../actions/simpleAction'
+import {homePageLoaded} from '../../actions/homePageLoaded'
 import { Link } from "react-router-dom";
 import '../../App.css';
 
-
 class App extends Component {
-  simpleAction = (event) => {
-    this.props.simpleAction()
+  homePageLoaded = (event) => {
+    this.props.homePageLoaded()
+  }
+
+  componentDidMount(){
+    this.props.homePageLoaded()
   }
 
   render() {
@@ -17,7 +20,7 @@ class App extends Component {
           <p>
             How well do you know aul Dublin town?
           </p>
-          <button onClick={this.simpleAction}>
+          <button>
             <Link to="/game">Name the Streets</Link>
           </button>
         </header>
@@ -33,7 +36,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
+  homePageLoaded: () => dispatch(homePageLoaded())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

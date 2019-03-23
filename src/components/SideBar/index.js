@@ -2,14 +2,17 @@ import React from 'react';
 import {connect} from 'react-redux'
 import ExploreGameSideBar from './ExploreGameSideBar'
 import PlayGameSideBar from './PlayGameSideBar'
+import PostPlayingSideBar from './PostPlayingSideBar'
 import {getGameMode} from '../../selectors/gameSelectors'
 
 
 function SideBar({gameMode}) {
       if(gameMode === 'explore') {
         return( <ExploreGameSideBar/> )
-      } else if (gameMode === 'playing' || gameMode === 'post-playing') {
-        return( <PlayGameSideBar/> )
+      } else if (gameMode === 'playing') {
+        return( <PostPlayingSideBar/> )
+      } else if (gameMode === 'post-playing') {
+        return <PostPlayingSideBar/>
       }
 }
 

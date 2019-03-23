@@ -4,7 +4,7 @@ import * as transform from './transform';
 export default(state = initialState, action) => {
   switch(action.type) {
     case 'FEATURE_CLICKED':
-      return transform.featureSelected(state, action.payload);
+      return transform.featureClicked(state, action.payload);
     case 'UNGUESSED_STREETS_LOADED':
       return transform.unguessedStreetsLoaded(state, action.payload);
     case 'PLAY_GAME_CLICKED':
@@ -15,6 +15,8 @@ export default(state = initialState, action) => {
       return transform.keyDownSelectionBox(state, action.payload);
     case 'TIME_REMAINING_ON_GAME_END':
       return transform.timeRemaingOnGameEnd(state, action.payload);
+    case 'HOME_PAGE_LOADED':
+      return {...state, ...initialState}
     default:
       return state
   }
@@ -38,6 +40,7 @@ const initialState = {
       currentStreetGuess: {},
       currentStreetClick: {},
       currentFeatureSelection: {},
+      popupOpen: true,
       allFeatures: [],
       allStreets: initialAllStreets()
   }

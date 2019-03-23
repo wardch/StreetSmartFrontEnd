@@ -43,6 +43,7 @@ export default function featureSelectedTransform(state, payload){
     gameTimerEndTime: areAllStreetsGuessed ? new Date() : null,
     streets: {
       ...state.streets,
+      popupOpen: !isCurrentGuessCorrect,
       currentStreetGuess: {...currentStreetGuess, isCurrentGuessCorrect: isCurrentGuessCorrect},
       allStreets: handleSelectionGuess(allStreets, clickedStreetName, guessedStreetName)
     }

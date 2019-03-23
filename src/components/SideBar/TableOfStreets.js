@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { Component } from 'react';
+import Collapse from 'react-bootstrap/Collapse'
 
 function displayStreetName(street, currentStreetGuess) {
   if(street === null){
@@ -19,8 +19,6 @@ function displayStreetName(street, currentStreetGuess) {
   }
 }
 
-
-
 function StreetTableRow({streetTriple, currentStreetGuess}){
   let [street1, street2, street3] = streetTriple
   return (
@@ -32,29 +30,67 @@ function StreetTableRow({streetTriple, currentStreetGuess}){
     )
 }
 
+// ({streets, currentStreetGuess})
 
-export default function TableOfStreets({streets, currentStreetGuess}) {
+export default class TableOfStreets extends Component {
+  constructor(props, context) {
+    super(props, context);
 
-  let chunk = 3
-  let streetsInThrees = []
-  for(let i = 0; i < streets.length; i += chunk) {
-    streetsInThrees.push(streets.slice(i, i + chunk))
+    this.state = {
+      open: false,
+      buttonText: 'View list of street names'
+    };
   }
-  streetsInThrees = streetsInThrees.filter(x => x)
-  return (
-    <table className='sidebar__table_of_streets'>
-      <thead>
-        <tr>
-          <th colSpan='3'>List Of Streets</th>
-        </tr>
-      </thead>
-      <tbody>
-        {streetsInThrees.map((streetTriple, idx) => {
-            return (
-              <StreetTableRow key={idx} streetTriple={streetTriple} currentStreetGuess={currentStreetGuess}/>
-              )
-          })}
-      </tbody>
-    </table>
-    )
+
+  _handleButtonClick(){
+    let {open} = this.state
+    this.setState({ open: !open })
+  }
+
+  toggleStreetLinkText(){
+    let {open} = this.state
+    if(open) {
+      return <span>Hide list of street names <i className="fas fa-angle-up rotate-icon"></i></span>
+    } else {
+      return <span>Need a hint? View list of street names <i className="fas fa-angle-down rotate-icon"></i></span>
+    }
+  }
+
+  render() {
+   const { open } = this.state;
+   let chunk = 3
+   let streetsInThrees = []
+   for(let i = 0; i < this.props.streets.length; i += chunk) {
+    streetsInThrees.push(this.props.streets.slice(i, i + chunk))
+    }
+   streetsInThrees = streetsInThrees.filter(x => x)
+
+   return (
+     <>
+       <p
+         onClick={() => this._handleButtonClick() }
+         aria-controls="street-names-collapse-text"
+         aria-expanded={open}>
+         {this.toggleStreetLinkText()}
+       </p>
+       <Collapse in={this.state.open}>
+       <table className='sidebar__table_of_streets'>
+         <thead>
+           <tr>
+             <th colSpan='3'>List Of Streets</th>
+           </tr>
+         </thead>
+         <tbody>
+           {streetsInThrees.map((streetTriple, idx) => {
+               return (
+                 <StreetTableRow key={idx} streetTriple={streetTriple} currentStreetGuess={this.props.currentStreetGuess}/>
+                 )
+             })}
+         </tbody>
+       </table>
+       </Collapse>
+     </>
+   );
+ }
+
 }

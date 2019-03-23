@@ -20,7 +20,6 @@ class PlayGameSideBar extends Component {
     }
   }
 
-
   componentDidUpdate(prevProps, nextProps) {
     if(!isEmpty(this.props.clickedStreet)) {
       this.state.selectRef.current.focus()
@@ -32,20 +31,6 @@ class PlayGameSideBar extends Component {
     return `${guessed}/${streets.length}`
   }
 
-  findValue(clickedStreet, currentStreetGuess){
-    if(isEmpty(clickedStreet)){
-      return {
-        value: 'Click a street to guess its name...',
-        label: 'Click a street to guess its name...'
-      }
-    } else {
-      return {
-        value: currentStreetGuess.streetName,
-        label: currentStreetGuess.streetName
-      }
-    }
-  }
-
   setSelectionBoxCss(currentStreetGuess){
     let newSelectionBoxCss = 'sidebar__selector-container'
     if(!isEmpty(currentStreetGuess) && !currentStreetGuess.isCurrentGuessCorrect){
@@ -54,13 +39,47 @@ class PlayGameSideBar extends Component {
     return newSelectionBoxCss
   }
 
+  findPlaceHolder(clickedStreet, currentStreetGuess, streets){
+    let guessed = streets.filter(street => street.guessed).length
 
+    if(guessed === streets.length) {
+      return 'Correct! You guessed all the streets!'
+    } else if(isEmpty(clickedStreet)){
+      return 'Click a street to start guessing...'
+    } else if ((clickedStreet && clickedStreet.streetName) === (currentStreetGuess && currentStreetGuess.streetName)) {
+      return 'Correct! Click a new street...'
+    } else {
+      return 'Type a streetname...'
+    }
+  }
+
+  findMenuOpen(clickedStreet, currentStreetGuess) {
+    if(isEmpty(clickedStreet)){
+      return false
+    } else if ((clickedStreet && clickedStreet.streetName) === (currentStreetGuess && currentStreetGuess.streetName)) {
+      return false
+    } else {
+      return true
+    }
+  }
+
+  displayStarterPrompt(streets){
+    let guessed = streets.filter(street => street.guessed).length
+    if (guessed === 0) {
+      return(
+      <div>
+        <h1>Click a street to begin guessing!</h1>
+        <hr/>
+      </div>)
+    } else {
+      return null
+    }
+  }
 
   render(){
       return(
         <div>
-        <h1>Click a street to begin guessing!</h1>
-        <hr/>
+          {this.displayStarterPrompt(this.props.allStreets)}
         <Row>
           <Col xs='6' sm='6' md='6' lg='6'>
             <div>
@@ -83,14 +102,15 @@ class PlayGameSideBar extends Component {
         </Row>
         <div className={this.setSelectionBoxCss(this.props.currentStreetGuess)}>
           <Select
-            value={this.findValue(this.props.clickedStreet, this.props.currentStreetGuess)}
             ref={this.state.selectRef}
             onChange={this.props.onSelectionGuess}
+            value={''}
             styles={this.props.colourStyles}
             onKeyDown={this.props.onKeyDownSelectionBox}
             options={this.props.options}
             isDisabled={isEmpty(this.props.clickedStreet)}
-            placeholder={'Click a street to begin guessing...'}
+            menuIsOpen={this.findMenuOpen(this.props.clickedStreet, this.props.currentStreetGuess)}
+            placeholder={this.findPlaceHolder(this.props.clickedStreet, this.props.currentStreetGuess, this.props.allStreets)}
           />
           </div>
         <ClickedFeaturesPhotos/>
