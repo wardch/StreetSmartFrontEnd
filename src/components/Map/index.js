@@ -97,6 +97,14 @@ export class Map extends Component {
     this.setState({mapStyle: newStyle});
   }
 
+  componentDidUpdate(prevProps){
+    if(this.props.gameMode !== prevProps.gameMode){
+      let {mapStyle} = this.state
+      let newStyle = setClickedMapLayer({}, mapStyle)
+      this.setState({mapStyle: newStyle});
+    }
+  }
+
   render() {
     const {viewport, mapStyle} = this.state;
 

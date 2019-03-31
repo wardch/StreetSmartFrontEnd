@@ -10,6 +10,7 @@ import {getCurrentClickedStreet, getCurrentStreetGuess, getAllStreets, getAllGue
 import {isEmpty} from 'lodash'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import './sidebar.sass'
 
 class PlayGameSideBar extends Component {
   constructor(props){
@@ -67,36 +68,37 @@ class PlayGameSideBar extends Component {
     let guessed = streets.filter(street => street.guessed).length
     if (guessed === 0) {
       return(
-      <div>
-        <h1>Click a street to begin guessing!</h1>
+      <Row>
+        <h3>Click a street to begin guessing!</h3>
         <hr/>
-      </div>)
+      </Row>)
     } else {
       return null
     }
   }
 
   render(){
+      // CONTINUE FROM HERE. Fix the css, timer is displaying funkily. 
       return(
-        <div>
-          {this.displayStarterPrompt(this.props.allStreets)}
+        <div className='sidebar--playing-sidebar'>
         <Row>
-          <Col xs='6' sm='6' md='6' lg='6'>
-            <div>
-              <h4>Score</h4>
-              <h4>{this.displayScore(this.props.allStreets)}</h4>
-            </div>
-          </Col>
           <Col>
             <CountDownTimer
-              initialTimerSeconds={this.props.initialTimerSeconds}
-              timeRemaingOnGameEnd={this.props.timeRemaingOnGameEnd}
-              stopTimer={this.props.gameMode === 'post-playing'}/>
+            initialTimerSeconds={this.props.initialTimerSeconds}
+            timeRemaingOnGameEnd={this.props.timeRemaingOnGameEnd}
+            stopTimer={this.props.gameMode === 'post-playing'}/>
+          </Col>
+          <Col xs='6' sm='6' md='6' lg='6'>
+            <div className='sidebar--playing-sidebar__score-div'>
+              <h2>Score</h2>
+              <h3>{this.displayScore(this.props.allStreets)}</h3>
+            </div>
           </Col>
         </Row>
         <hr/>
-        <Row>
+        <Row className='sidebar--playing-sidebar__hint-row'>
           <Col>
+            {this.displayStarterPrompt(this.props.allStreets)}
             <TableOfStreets streets={this.props.allStreets} currentStreetGuess={this.props.currentStreetGuess}/>
           </Col>
         </Row>

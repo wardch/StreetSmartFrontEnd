@@ -1,3 +1,21 @@
+.sidebar--playing-sidebar
+  .row:first-child
+    margin-top: 30px
+    margin-bottom: 40px
+  .sidebar--playing-sidebar__score-div
+    text-align: center
+    h3
+      margin-top: 20px
+  .sidebar--playing-sidebar__timer-div
+    text-align: center
+    h2
+      margin-bottom: 0px
+  .sidebar--playing-sidebar__hint-row
+    div
+      div
+        h3
+          text-align: center
+
 .sidebar--explore-sidebar
   text-align: center
   h2
@@ -31,34 +49,34 @@
 
 .countdown-timer
   position: absolute
-  width: 52px
-  height: 52px
+  width: 108px
+  height: 108px
 
 .countdown-timer__circle-container
   svg
-    width: 52px
-    height: 52px
+    width: 108px
+    height: 108px
     transform: rotateZ(-90deg)
     position: absolute
   circle
-    stroke-dasharray: 151px
-    stroke-dashoffset: 151px
+    stroke-dasharray: 188px
     stroke-linecap: butt
-    stroke-width: 4px
+    stroke-width: 6px
     stroke: blue
     fill: none
   .countdown-timer__background-circle
-    stroke-dasharray: 151px
-    stroke-dashoffset: 0px
+    stroke-dasharray: 188px
     stroke-linecap: butt
-    stroke-width: 4px
-    stroke: green
+    opacity: 0.2
+    stroke-width: 6px
+    stroke: blue
     fill: none
 
 .countdown-timer__text
   position: absolute
-  top: 17px
-  width: 52px
+  top: 26px
+  left: 49px
+  width: 108px
   font-size: 14px
   font-weight: 600
   text-align: center
@@ -67,4 +85,4 @@
   from
     stroke-dashoffset: 0px
   to
-    stroke-dashoffset: 151px
+    stroke-dashoffset: 188px
