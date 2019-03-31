@@ -3,21 +3,23 @@ import {connect} from 'react-redux'
 import ClickedFeaturesPhotos from './ClickedFeaturesPhotos'
 import {playGameClicked} from '../../actions/mapActions'
 import {getGameMode, getAllStreets} from '../../selectors/gameSelectors'
-
+import './sidebar.sass'
+import Button from 'react-bootstrap/Button';
 
 function ExploreGameSideBar({gameMode, allStreets, playGameClicked}) {
       return(
-        <div>
+        <div className='sidebar--explore-sidebar'>
         <h2>
-          There are {allStreets.length} Dublin streets on the map to the right.
+          There are {allStreets.length} Dublin streets on the map to the right
         </h2>
+        <hr/>
         <p>
-          To learn more about each street, click on them for more information.
-          When you are ready to begin guessing each street, click the button below.
+          To learn more about each street, click on it for more information.
+          When you are finished exploring the map and are ready to begin guessing each street, click the button below.
         </p>
-        <button onClick={playGameClicked}>
-          Play Game
-        </button>
+        <Button variant="success" onClick={playGameClicked} className='sidebar--explore-sidebar__begin-button'>
+            Begin Game
+        </Button>
         <ClickedFeaturesPhotos/>
         </div>
       )

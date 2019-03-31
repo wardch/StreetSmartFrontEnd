@@ -52,7 +52,6 @@ export class Map extends Component {
     const {features, srcEvent: {offsetX, offsetY}} = event;
     let {clickedFeature} = this.state
     const hoveredFeature = features && features.find(f => f.layer.id === 'dublin-street-names-hidden');
-    if(!isEmpty(clickedFeature)) { return }
     const featureProperties = hoveredFeature && hoveredFeature.properties
     let {mapStyle} = this.state
     let newStyle = setHoveredMapLayer(hoveredFeature, mapStyle)
@@ -62,6 +61,7 @@ export class Map extends Component {
   };
 
   _onClick = (event) => {
+    this.setState({hoveredFeature: null});
     const {features, srcEvent: {offsetX, offsetY}} = event;
     const clickedFeature = (features && features.find(f => f.layer.id === 'dublin-street-names-hidden')) || {};
     const featureProperties = clickedFeature && clickedFeature.properties
@@ -74,10 +74,9 @@ export class Map extends Component {
   };
 
   _renderPopup() {
-    const {featureProperties} = this.state;
-
-    if(featureProperties && this.props.popupOpen) {
-      let [longitude, latitude] = featureProperties.centerPoint.split(',')
+    const {hoveredFeature} = this.state;
+    if(hoveredFeature) {
+      let [longitude, latitude] = hoveredFeature.properties.centerPoint.split(',')
       return(
         <Popup tipSize={5}
           anchor="top-right"
@@ -85,7 +84,7 @@ export class Map extends Component {
           latitude={parseFloat(latitude)}
           closeOnClick={false}
           onClose={() => this.setState({clickedFeature: null})} >
-          <StreetInfo featureProperties={featureProperties} gameMode={this.props.gameMode} />
+          <StreetInfo featureProperties={hoveredFeature.properties} gameMode={this.props.gameMode} />
         </Popup>
       )
     }

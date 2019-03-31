@@ -10,6 +10,7 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import {highScoreSubmitted} from '../../actions/modalActions'
 import axios from 'axios'
 import {getAllStreets, getGameTimeRemaining, getGameTimerTotalInitalSeconds, getIsHighScoreSubmitted} from '../../selectors/gameSelectors'
+import {dublineseMyName} from '../../utils/index'
 
 class SubmitHighScoreForm extends Component {
   constructor(props, context) {
@@ -31,14 +32,12 @@ class SubmitHighScoreForm extends Component {
 
   dublineseTheName(){
     let {firstName, lastName} = this.state
-    let dublineseName = `${firstName} McCopperFaced ${lastName}`
+    let dublineseName = dublineseMyName(firstName, lastName)
     this.setState({dublineseName: dublineseName})
     this.state.dublineseNameRef.current.value = dublineseName
   }
 
   submitHighScore(){
-    console.log("$$$$$".repeat(50));
-    console.log('submitting high score');
     let {firstName, lastName, highScore, dublineseName, email} = this.state
     if(!firstName || !lastName) {
       return alert('Please make sure First Name and Last Name fields are filled in')

@@ -1,4 +1,6 @@
 import React from 'react';
+import {streetImages} from '../../constants/streetImages'
+import './streetInfo.sass'
 
 const displayStreetName = (streetName, gameMode) => {
   if(gameMode === 'playing') {
@@ -9,12 +11,13 @@ const displayStreetName = (streetName, gameMode) => {
 }
 
 export default function StreetInfo({featureProperties, gameMode}) {
+    let streetImageInfo = streetImages.find(street => street.streetName === featureProperties.streetName)
     return (
       <div>
-        <div>
+        <div className='street-info__header'>
           {displayStreetName(featureProperties.streetName, gameMode)}
         </div>
-        <img width={240} src={'https://i2-prod.dublinlive.ie/incoming/article12111785.ece/ALTERNATES/s810/Talbot-Street.jpg'} alt={'Talbot street on a rare sunny day'} />
+        <img width={240} src={streetImageInfo.streetUrls[0]} alt={`Picture of ${featureProperties.streetName}`} />
       </div>
     );
 }
