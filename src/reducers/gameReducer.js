@@ -17,6 +17,8 @@ export default(state = initialState, action) => {
       return transform.timeRemaingOnGameEnd(state, action.payload);
     case 'HOME_PAGE_LOADED':
       return {...state, ...initialState}
+    case 'HIGH_SCORE_SUBMITTED':
+      return {...state, isHighScoreSubmitted: true}
     default:
       return state
   }
@@ -36,6 +38,7 @@ const initialState = {
     gameTimerTotalInitialSeconds: 60,
     gameTimeRemaining: 60,
     selectionBoxStyle: {},
+    isHighScoreSubmitted: false,
     streets: {
       currentStreetGuess: {},
       currentStreetClick: {},

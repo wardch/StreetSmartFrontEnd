@@ -57,6 +57,11 @@ export const getAllGuessingOptions = createSelector(
     streets => formatAllStreets(streets)
   )
 
+export const getIsHighScoreSubmitted = createSelector(
+    gameSelector,
+    game => game.isHighScoreSubmitted
+  )
+
 function formatAllStreets(streets) {
   return streets.map(street => {
       return {

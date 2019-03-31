@@ -52,7 +52,7 @@ export default class TableOfStreets extends Component {
     if(open) {
       return <span>Hide list of street names <i className="fas fa-angle-up rotate-icon"></i></span>
     } else {
-      return <span>Need a hint? View list of street names <i className="fas fa-angle-down rotate-icon"></i></span>
+      return <span>Need a hint? View list of all Dublin street names <i className="fas fa-angle-down rotate-icon"></i></span>
     }
   }
 

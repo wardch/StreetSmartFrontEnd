@@ -7,14 +7,18 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import { Link } from "react-router-dom";
 import SubmitHighScoreForm from './SubmitHighScoreForm'
+import { ordinal_suffix_of } from '../../utils/index'
+import axios from 'axios'
 
 class PostPlayingSideBar extends Component {
   constructor(props){
     super(props)
     this.state = {
       show: true,
+      rank: null,
     }
     this.handleShow = () => {
       this.setState({ show: true });
@@ -24,6 +28,17 @@ class PostPlayingSideBar extends Component {
       this.setState({ show: false });
     };
   }
+
+  componentDidMount(){
+    axios.post('https://street-smart-dublin-backend.herokuapp.com/api/v1/rank', {
+      high_score: {
+        high_score: '0'
+        }
+      })
+    .then(response => {
+      this.setState({rank: response.data})
+      })
+    }
 
   displayScore(streets) {
     let guessed = streets.filter(street => street.guessed).length
@@ -52,12 +67,14 @@ class PostPlayingSideBar extends Component {
     let correctGuesses = this.props.allStreets.filter(street => street.guessed).length
     if(this.props.gameTimeRemaining === 0){
       return `Well done though, you guessed ${correctGuesses} streets correctly.`
-    } else if(this.props.allStreets.every(street => street.guessed)) {
+    } else {
       return `You guessed ${correctGuesses} streets correctly in
       ${this.props.gameTimerTotalInitialSeconds - this.props.gameTimeRemaining} seconds.`
-    } else {
-      return ''
     }
+  }
+
+  calculateHighScore(gameTimeRemaining, allStreets){
+    return (20 * 2) + gameTimeRemaining
   }
 
   render(){
@@ -120,8 +137,8 @@ class PostPlayingSideBar extends Component {
         <Modal
           show={this.state.show}
           onHide={this.handleHide}
-          dialogClassName="modal-90w"
-          aria-labelledby="modal-finished-game"
+          size='lg'
+          aria-labelledby="example-custom-modal-styling-title"
           >
           <Modal.Header closeButton>
           <Modal.Title>
@@ -132,8 +149,8 @@ class PostPlayingSideBar extends Component {
           <p>{this.formatSubHeader()}</p>
           <hr/>
           <p>
-            You'd rank 10th on the all time Dublin Street Smart leaderboard.
-            Type your name in too publish your score. You can `Dublinese` your name
+            You'd rank {ordinal_suffix_of(this.state.rank)} on the all time Dublin Street Smart leaderboard with a score of {this.calculateHighScore(this.props.gameTimeRemaining, this.props.allStreets)}.
+            Type your name in too publish your score. You can "Dublinese" your name
             too with the Dublinese-Name-Generator.
           </p>
           <div>

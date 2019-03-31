@@ -1,13 +1,3 @@
-export const streetSelected = (street) => dispatch => {
-  return dispatch(
-    {
-      type: "FEATURE_SELECTED",
-      payload: street
-    }
-  )
-}
-
-
 export const unguessedStreetsLoaded = (streets) => dispatch => {
   return dispatch(
     {
