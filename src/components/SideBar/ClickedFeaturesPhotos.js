@@ -16,7 +16,7 @@ const displayStreetName = (streetName, gameMode) => {
 
 const displayStreetImages = (streetUrls) => {
   return streetUrls.map((streetUrl, idx) => {
-      return <img key={`street-idx-${idx}`} className='sidebar__image' src={streetUrl} />
+      return <img key={`street-idx-${idx}`} className='sidebar__image' src={streetUrl} alt='dublin street' />
   })
 }
 

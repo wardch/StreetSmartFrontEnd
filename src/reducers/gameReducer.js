@@ -35,8 +35,8 @@ const initialAllStreets = () => {
 
 const initialState = {
     gameMode: 'playing',
-    gameTimerTotalInitialSeconds: 2,
-    gameTimeRemaining:2,
+    gameTimerTotalInitialSeconds: 1,
+    gameTimeRemaining:1,
     selectionBoxStyle: {},
     isHighScoreSubmitted: false,
     streets: {

@@ -17,7 +17,7 @@ export default function StreetInfo({featureProperties, gameMode}) {
         <div className='street-info__header'>
           {displayStreetName(featureProperties.streetName, gameMode)}
         </div>
-        <img width={240} src={streetImageInfo.streetUrls[0]} alt={`Picture of ${featureProperties.streetName}`} />
+        <img width={240} src={streetImageInfo.streetUrls[0]} alt={`${featureProperties.streetName}`} />
       </div>
     );
 }

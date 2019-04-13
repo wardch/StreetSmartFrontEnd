@@ -20,7 +20,7 @@ export function dublineseMyName(firstName, lastName){
     if(randomNumber < 0.3) {
       return `Any-Yolks ${firstName}`
     } else {
-      return 'Alriiite ${firstName}'
+      return `Alriiite ${firstName}`
     }
   } else if(firstName[0].toLowerCase() === 'b') {
     return `Battered ${firstName} Bar ${lastName}`

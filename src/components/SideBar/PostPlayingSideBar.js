@@ -55,7 +55,7 @@ class PostPlayingSideBar extends Component {
 
   formatHeader(){
     if(this.props.gameTimeRemaining === 0){
-      return `Out of time!`
+      return `Out of time dawg!`
     } else if(this.props.allStreets.every(street => street.guessed)) {
       return `Jaysus Fair Play to Ye.`
     } else {

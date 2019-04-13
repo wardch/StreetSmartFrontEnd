@@ -24,7 +24,7 @@ class PostGameModal extends Component {
 
   formatHeader(){
     if(this.props.gameTimeRemaining === 0){
-      return `Out of time!`
+      return `Out of timeeeee!`
     } else if(this.props.allStreets.every(street => street.guessed)) {
       return `Jaysus Fair Play to Ye.`
     } else {
@@ -50,13 +50,14 @@ class PostGameModal extends Component {
     } else if (this.props.gameMode === 'post-playing'){
       return (
         <Modal
+        className='post-game__modal'
         show={this.state.show}
         onHide={this.handleHide}
         dialogClassName="modal-90w"
         aria-labelledby="modal-finished-game"
         >
         <Modal.Header closeButton>
-        <Modal.Title>
+        <Modal.Title className='post-game__modal-title'>
         {this.formatHeader()}
         </Modal.Title>
         </Modal.Header>
