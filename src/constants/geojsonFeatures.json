@@ -3,8 +3,147 @@
     {
       "type": "Feature",
       "properties": {
+        "streetName": "Westmoreland Street",
+        "centerPoint": "-6.25914,53.3453",
+        "anchor": "top-left"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.259148,
+            53.347024
+          ],
+          [
+            -6.259138,
+            53.344822
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "020f372f2025b77662db9f1865987477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "centerPoint": "-6.25404, 53.3503",
+        "anchor": "top-right",
+        "streetName": "Gardiner Street"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.253642,
+            53.349605
+          ],
+          [
+            -6.256818,
+            53.354178
+          ],
+          [
+            -6.257978,
+            53.355649
+          ],
+          [
+            -6.260733,
+            53.358332
+          ],
+          [
+            -6.261929,
+            53.359024
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "6589a22e75a07c97a53771fb84dea300"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "D'Olier Street",
+        "centerPoint": "-6.25738,53.3459",
+        "anchor": "top-right"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.258847,
+            53.347024
+          ],
+          [
+            -6.25866,
+            53.346771
+          ],
+          [
+            -6.257143,
+            53.34576
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "6d9ca4cafe9deb2bd881429a64a999ca"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "streetName": "Marlborough Street",
+        "centerPoint": "-6.25753,53.3484"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.259598,
+            53.353386
+          ],
+          [
+            -6.257341,
+            53.347946
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "7cf22fb1a6d2bb9d479fbe92c9ab014a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Abby Street",
+        "centerPoint": "-6.26618,53.3476",
+        "anchor": "top-left"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.268378,
+            53.347285
+          ],
+          [
+            -6.261251,
+            53.348185
+          ],
+          [
+            -6.256475,
+            53.348922
+          ],
+          [
+            -6.254365,
+            53.349309
+          ],
+          [
+            -6.253612,
+            53.349633
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "9d71884a9744c22f3782f9bad0b7f86f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "streetName": "O'Connell Street",
-        "centerPoint": "-6.260283125264408, 53.35006557501001"
+        "centerPoint": "-6.25947, 53.3483",
+        "anchor": "top-right"
       },
       "geometry": {
         "coordinates": [
@@ -29,7 +168,8 @@
       "type": "Feature",
       "properties": {
         "streetName": "Talbot Street",
-        "centerPoint": "-6.252988069577473, 53.35095806347194"
+        "centerPoint": "-6.257586, 53.350229",
+        "anchor": "top-left"
       },
       "geometry": {
         "coordinates": [
@@ -81,31 +221,6 @@
         "type": "LineString"
       },
       "id": "a6c39c0a7993333b20b524e3d6034593"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "streetName": "Abby Street",
-        "centerPoint": "-6.2572146781475055, 53.34879750412043"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            -6.259617,
-            53.348451
-          ],
-          [
-            -6.257214,
-            53.348797
-          ],
-          [
-            -6.253588,
-            53.349514
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "c4b4d63cf14a467ff1cee08dc0b6db0a"
     }
   ],
   "type": "FeatureCollection"

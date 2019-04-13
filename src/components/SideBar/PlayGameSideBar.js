@@ -46,11 +46,11 @@ class PlayGameSideBar extends Component {
     if(guessed === streets.length) {
       return 'Correct! You guessed all the streets!'
     } else if(isEmpty(clickedStreet)){
-      return 'Click a street to start guessing...'
+      return 'Click a street to begin guessing...'
     } else if ((clickedStreet && clickedStreet.streetName) === (currentStreetGuess && currentStreetGuess.streetName)) {
       return 'Correct! Click a new street...'
     } else {
-      return 'Type a streetname...'
+      return 'Type a street name...'
     }
   }
 
@@ -68,55 +68,63 @@ class PlayGameSideBar extends Component {
     let guessed = streets.filter(street => street.guessed).length
     if (guessed === 0) {
       return(
-      <Row>
-        <h3>Click a street to begin guessing!</h3>
+      <div>
+        <h3 className='sidebar--playing-sidebar__hint-row__initial_header_prompt'>Click a street to begin guessing!</h3>
         <hr/>
-      </Row>)
+      </div>)
     } else {
       return null
     }
   }
 
   render(){
-      // CONTINUE FROM HERE. Fix the css, timer is displaying funkily. 
+      // CONTINUE FROM HERE. Fix the css, timer is displaying funkily.
+      console.log("$$$$$".repeat(50));
+      console.log('this.props.options', this.props.options);
       return(
         <div className='sidebar--playing-sidebar'>
-        <Row>
-          <Col>
-            <CountDownTimer
-            initialTimerSeconds={this.props.initialTimerSeconds}
-            timeRemaingOnGameEnd={this.props.timeRemaingOnGameEnd}
-            stopTimer={this.props.gameMode === 'post-playing'}/>
-          </Col>
-          <Col xs='6' sm='6' md='6' lg='6'>
-            <div className='sidebar--playing-sidebar__score-div'>
-              <h2>Score</h2>
-              <h3>{this.displayScore(this.props.allStreets)}</h3>
+          <Row className='timer-and-score__container'>
+            <Col xs='6' sm='6' md='6' lg='6'>
+              <CountDownTimer
+              initialTimerSeconds={this.props.initialTimerSeconds}
+              timeRemaingOnGameEnd={this.props.timeRemaingOnGameEnd}
+              stopTimer={this.props.gameMode === 'post-playing'}/>
+            </Col>
+            <Col xs='6' sm='6' md='6' lg='6'>
+              <div className='sidebar--playing-sidebar__score-div'>
+                <h1>Score</h1>
+                <h2>{this.displayScore(this.props.allStreets)}</h2>
+              </div>
+            </Col>
+          </Row>
+          <hr/>
+          <Row className='sidebar--playing-sidebar__hint-row'>
+            <Col>
+              <Row>
+                {this.displayStarterPrompt(this.props.allStreets)}
+                <TableOfStreets streets={this.props.allStreets} currentStreetGuess={this.props.currentStreetGuess}/>
+              </Row>
+            </Col>
+          </Row>
+          <div className={this.setSelectionBoxCss(this.props.currentStreetGuess)}>
+            <hr/>
+            <Select
+              maxMenuHeight={125}
+              ref={this.state.selectRef}
+              onChange={this.props.onSelectionGuess}
+              value={''}
+              styles={this.props.colourStyles}
+              onKeyDown={this.props.onKeyDownSelectionBox}
+              options={this.props.options}
+              isDisabled={isEmpty(this.props.clickedStreet)}
+              menuIsOpen={this.findMenuOpen(this.props.clickedStreet, this.props.currentStreetGuess)}
+              placeholder={this.findPlaceHolder(this.props.clickedStreet, this.props.currentStreetGuess, this.props.allStreets)}
+            />
             </div>
-          </Col>
-        </Row>
-        <hr/>
-        <Row className='sidebar--playing-sidebar__hint-row'>
-          <Col>
-            {this.displayStarterPrompt(this.props.allStreets)}
-            <TableOfStreets streets={this.props.allStreets} currentStreetGuess={this.props.currentStreetGuess}/>
-          </Col>
-        </Row>
-        <div className={this.setSelectionBoxCss(this.props.currentStreetGuess)}>
-          <Select
-            ref={this.state.selectRef}
-            onChange={this.props.onSelectionGuess}
-            value={''}
-            styles={this.props.colourStyles}
-            onKeyDown={this.props.onKeyDownSelectionBox}
-            options={this.props.options}
-            isDisabled={isEmpty(this.props.clickedStreet)}
-            menuIsOpen={this.findMenuOpen(this.props.clickedStreet, this.props.currentStreetGuess)}
-            placeholder={this.findPlaceHolder(this.props.clickedStreet, this.props.currentStreetGuess, this.props.allStreets)}
-          />
+          <div className='sidebar--playing-sidebar__image_and_modal_container'>
+            <ClickedFeaturesPhotos/>
+            <PostGameModal gameMode={this.props.gameMode}/>
           </div>
-        <ClickedFeaturesPhotos/>
-        <PostGameModal gameMode={this.props.gameMode}/>
         </div>
       )
     }

@@ -1,7 +1,6 @@
 .sidebar--playing-sidebar
   .row:first-child
     margin-top: 30px
-    margin-bottom: 40px
   .sidebar--playing-sidebar__score-div
     text-align: center
     h3
@@ -12,9 +11,14 @@
       margin-bottom: 0px
   .sidebar--playing-sidebar__hint-row
     div
+      width: 100%
+      text-align: center
       div
         h3
           text-align: center
+
+.timer-and-score__container
+  max-height: 140px
 
 .sidebar--explore-sidebar
   text-align: center
@@ -24,15 +28,6 @@
 .sidebar--explore-sidebar__begin-button
   font-size: 20px
   margin-top: 30px
-
-.sidebar__table_of_streets
-  width: 100%
-  thead
-    text-align: center
-  tbody
-    tr
-      td
-        margin: 0px 15px
 
 .sidebar__image
   width: 100%
@@ -45,7 +40,9 @@
   color: green
 
 .sidebar__selector-container
-  margin-top: 80px
+  margin-top: 40px
+  hr
+    margin-bottom: 40px
 
 .countdown-timer
   position: absolute
@@ -86,3 +83,53 @@
     stroke-dashoffset: 0px
   to
     stroke-dashoffset: 188px
+
+
+.coundown-timer__table
+  text-align: center
+  thead
+    th
+      padding: 0px
+      border-bottom: 0px
+      border-top: 0px
+  tbody
+    td
+      border-bottom: 0px
+      border-top: 0px
+      p
+        position: relative
+        bottom: 99px
+        left: 2px
+      svg
+        position: relative
+        left: 7px
+        bottom: 17px
+        width: 108px
+        height: 108px
+        transform: rotateZ(-90deg)
+      circle
+        stroke-dasharray: 188px
+        stroke-linecap: butt
+        stroke-width: 6px
+        stroke: blue
+        fill: none
+      .countdown-timer__background-circle
+        stroke-dasharray: 188px
+        stroke-linecap: butt
+        opacity: 0.2
+        stroke-width: 6px
+        stroke: blue
+        fill: none
+
+.sidebar--playing-sidebar__hint-row__initial_header_prompt
+  margin: 0px 20px
+
+.sidebar--playing-sidebar__hint-row__show_streets_hint_text
+  margin-top: 30px
+  cursor: pointer
+
+.sidebar--playing-sidebar__hint-row__table
+  margin-top: 30px
+
+.sidebar--playing-sidebar__image_and_modal_container
+  margin-top: 140px

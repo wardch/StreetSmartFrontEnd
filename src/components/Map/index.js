@@ -79,7 +79,7 @@ export class Map extends Component {
       let [longitude, latitude] = hoveredFeature.properties.centerPoint.split(',')
       return(
         <Popup tipSize={5}
-          anchor="top-right"
+          anchor={hoveredFeature.properties.anchor}
           longitude={parseFloat(longitude)}
           latitude={parseFloat(latitude)}
           closeOnClick={false}

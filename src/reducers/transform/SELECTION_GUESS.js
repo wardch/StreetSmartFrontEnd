@@ -12,7 +12,9 @@ function handleSelectionGuess(allStreets, clickedStreetName, guessedStreetName){
 
 function setSelectionBoxStyle(clickedStreetName, guessedStreetName, isCurrentGuessCorrect){
   return {
-    control: styles => ({ ...styles, backgroundColor: `${isCurrentGuessCorrect ? 'green' : 'red'}`, color: 'white' }),
+    control: styles => ({ ...styles,
+                          backgroundColor: `${isCurrentGuessCorrect ? '#9EFF9E' : '#FFB2B2'}`,
+                          color: 'white' }),
   }
 }
 

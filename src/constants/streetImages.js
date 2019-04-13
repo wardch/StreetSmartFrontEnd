@@ -23,5 +23,37 @@ export const streetImages =
       'https://upload.wikimedia.org/wikipedia/commons/4/4b/Talbot_Street%2C_Dublin.jpg',
       'https://www.dublintown.ie/wp-content/uploads/2016/03/Talbot-banner-1500x515.jpg'
     ]
+  },
+  {
+    "streetName": "Marlborough Street",
+    'streetUrls': [
+      'https://upload.wikimedia.org/wikipedia/commons/e/e6/Dublin_Talbot_Street.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/4/4b/Talbot_Street%2C_Dublin.jpg',
+      'https://www.dublintown.ie/wp-content/uploads/2016/03/Talbot-banner-1500x515.jpg'
+    ]
+  },
+  {
+    "streetName": "Gardiner Street",
+    'streetUrls': [
+      'https://upload.wikimedia.org/wikipedia/commons/e/e6/Dublin_Talbot_Street.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/4/4b/Talbot_Street%2C_Dublin.jpg',
+      'https://www.dublintown.ie/wp-content/uploads/2016/03/Talbot-banner-1500x515.jpg'
+    ]
+  },
+  {
+    "streetName": "Westmoreland Street",
+    'streetUrls': [
+      'https://upload.wikimedia.org/wikipedia/commons/e/e6/Dublin_Talbot_Street.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/4/4b/Talbot_Street%2C_Dublin.jpg',
+      'https://www.dublintown.ie/wp-content/uploads/2016/03/Talbot-banner-1500x515.jpg'
+    ]
+  },
+  {
+    "streetName": "D'Olier Street",
+    'streetUrls': [
+      'https://upload.wikimedia.org/wikipedia/commons/e/e6/Dublin_Talbot_Street.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/4/4b/Talbot_Street%2C_Dublin.jpg',
+      'https://www.dublintown.ie/wp-content/uploads/2016/03/Talbot-banner-1500x515.jpg'
+    ]
   }
 ]

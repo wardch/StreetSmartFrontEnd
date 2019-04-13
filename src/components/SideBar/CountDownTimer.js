@@ -39,30 +39,35 @@ export default class CountDownTimer extends Component {
 
   render(){
     return(
-      <div className='sidebar--playing-sidebar__timer-div'>
-        <h2 >Timer</h2>
-        <div className="countdown-timer">
-          <div className="countdown-timer__circle-container">
-            <svg>
-            <circle className='countdown-timer__background-circle'
+      <table className='coundown-timer__table table'>
+        <thead>
+          <tr>
+            <th>
+              <h1>Timer</h1>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <svg>
+              <circle className='countdown-timer__background-circle'
               r="30"
               cx="70"
               cy="49"/>
               <circle
-                r="30"
-                cx="70"
-                cy="49"
-                style={{
-                  animation: `countdown-animation ${this.props.initialTimerSeconds}s linear`
-                  }}/>
-            </svg>
-          </div>
-          <div className="countdown-timer__text">
-            {this.displayTime(this.state.timeRemainingInSeconds)}
-          </div>
-        </div>
-      </div>
-
+              r="30"
+              cx="70"
+              cy="49"
+              style={{
+                animation: `countdown-animation ${this.props.initialTimerSeconds}s linear`
+                }}/>
+                </svg>
+              <p>{this.displayTime(this.state.timeRemainingInSeconds)}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       )
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Collapse from 'react-bootstrap/Collapse'
 
 function displayStreetName(street, currentStreetGuess) {
-  if(street === null){
+  if(!street){
     return null
   } else if(street.guessed && street.streetName === currentStreetGuess.streetName){
     return (
@@ -66,18 +66,19 @@ export default class TableOfStreets extends Component {
    streetsInThrees = streetsInThrees.filter(x => x)
 
    return (
-     <>
+     <div>
        <p
          onClick={() => this._handleButtonClick() }
          aria-controls="street-names-collapse-text"
+         className='sidebar--playing-sidebar__hint-row__show_streets_hint_text'
          aria-expanded={open}>
          {this.toggleStreetLinkText()}
        </p>
        <Collapse in={this.state.open}>
-       <table className='sidebar__table_of_streets'>
+       <table className='sidebar--playing-sidebar__hint-row__table table'>
          <thead>
            <tr>
-             <th colSpan='3'>List Of Streets</th>
+             <th colSpan='3'>All Street Names</th>
            </tr>
          </thead>
          <tbody>
@@ -89,7 +90,7 @@ export default class TableOfStreets extends Component {
          </tbody>
        </table>
        </Collapse>
-     </>
+     </div>
    );
  }
 
