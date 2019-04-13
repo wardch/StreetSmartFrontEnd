@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {fancyTimeFormat} from '../../utils/index'
 import './sidebar.sass'
 
 
@@ -17,25 +18,19 @@ export default class CountDownTimer extends Component {
       }, 1000)
   }
 
+  componentWillUnmount() {
+    this.props.timeRemaingOnGameEnd(this.state.timeRemainingInSeconds)
+    clearInterval(this.timer)
+  }
+
   decrementTimer(){
-    if(this.props.stopTimer) {
-      this.props.timeRemaingOnGameEnd(this.state.timeRemainingInSeconds)
-      clearInterval(this.timer)
-    } else if(this.state.timeRemainingInSeconds > 0) {
+    if(this.state.timeRemainingInSeconds > 0) {
       this.setState({timeRemainingInSeconds: this.state.timeRemainingInSeconds - 1})
     } else {
       this.props.timeRemaingOnGameEnd(0)
       clearInterval(this.timer)
     }
   }
-
-  displayTime(time) {
-    //TODO: Pad the seconds so when single digits they're preceeded by a 0.
-    let minutes = Math.floor(time / 60)
-    let seconds = time - (minutes * 60)
-    return `${minutes} : ${seconds}`
-  }
-
 
   render(){
     return(
@@ -63,7 +58,7 @@ export default class CountDownTimer extends Component {
                 animation: `countdown-animation ${this.props.initialTimerSeconds}s linear`
                 }}/>
                 </svg>
-              <p>{this.displayTime(this.state.timeRemainingInSeconds)}</p>
+              <p>{fancyTimeFormat(this.state.timeRemainingInSeconds)}</p>
             </td>
           </tr>
         </tbody>

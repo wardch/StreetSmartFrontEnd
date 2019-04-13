@@ -66,21 +66,27 @@ class PlayGameSideBar extends Component {
 
   displayStarterPrompt(streets){
     let guessed = streets.filter(street => street.guessed).length
-    if (guessed === 0) {
+    if (guessed === 0 && isEmpty(this.props.clickedStreet)) {
       return(
       <div>
-        <h3 className='sidebar--playing-sidebar__hint-row__initial_header_prompt'>Click a street to begin guessing!</h3>
+        <h3 className='sidebar--playing-sidebar__hint-row__initial_header_prompt'>Click a street to begin guessing...</h3>
         <hr/>
       </div>)
+    } else if (guessed === 0 && this.props.clickedStreet) {
+      return (
+        <div>
+          <h3 className='sidebar--playing-sidebar__hint-row__initial_header_prompt'>Type the streets name to make a guess...</h3>
+          <hr/>
+        </div>
+        )
     } else {
       return null
     }
   }
 
+
+
   render(){
-      // CONTINUE FROM HERE. Fix the css, timer is displaying funkily.
-      console.log("$$$$$".repeat(50));
-      console.log('this.props.options', this.props.options);
       return(
         <div className='sidebar--playing-sidebar'>
           <Row className='timer-and-score__container'>
@@ -123,7 +129,6 @@ class PlayGameSideBar extends Component {
             </div>
           <div className='sidebar--playing-sidebar__image_and_modal_container'>
             <ClickedFeaturesPhotos/>
-            <PostGameModal gameMode={this.props.gameMode}/>
           </div>
         </div>
       )

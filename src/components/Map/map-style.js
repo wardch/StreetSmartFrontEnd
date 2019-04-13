@@ -26,7 +26,7 @@ const guessedStreetsMapLayer = {
     "type": "line",
     "source": "dublin-street-names-guessed",
     "layout": {},
-    "paint": {"line-width": 5, "line-color": "#7FFF00"}
+    "paint": {"line-width": 7, "line-color": "#7FFF00"}
   };
 
 const clickedStreetNameLayer = {
@@ -34,7 +34,7 @@ const clickedStreetNameLayer = {
   "type": "line",
   "source": "dublin-street-names-clicked",
   "layout": {},
-    "paint": {"line-width": 4, "line-color": "hsl(300, 100%, 56%)"}
+    "paint": {"line-width": 7, "line-color": "orange"}
 };
 
 const hoverStreetNameLayer = {

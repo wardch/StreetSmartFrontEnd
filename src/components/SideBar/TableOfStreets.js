@@ -6,15 +6,15 @@ function displayStreetName(street, currentStreetGuess) {
     return null
   } else if(street.guessed && street.streetName === currentStreetGuess.streetName){
     return (
-      <span className='sidebar__span-correct_street_guess'>{street.streetName} <i className="fas fa-check animated heartBeat"></i></span>
+      <span className='sidebar__span-correct_street_guess'>{street.streetName} <br/> <i className="fas fa-check animated heartBeat"></i></span>
       )
   } else if(street.guessed){
     return (
-      <span className='sidebar__span-correct_street_guess'>{street.streetName} <i className="fas fa-check"></i></span>
+      <span className='sidebar__span-correct_street_guess'>{street.streetName} <br/><i className="fas fa-check"></i></span>
       )
   } else {
     return (
-      <span>{street.streetName} <i className="fas fa-question"></i></span>
+      <span>{street.streetName} <br/><i className="fas fa-question"></i></span>
       )
   }
 }
@@ -50,7 +50,7 @@ export default class TableOfStreets extends Component {
   toggleStreetLinkText(){
     let {open} = this.state
     if(open) {
-      return <span>Hide list of street names <i className="fas fa-angle-up rotate-icon"></i></span>
+      return <span>Hide list of street names <i className="fas fa-angle-up rotate-icon"> </i></span>
     } else {
       return <span>Need a hint? View list of all Dublin street names <i className="fas fa-angle-down rotate-icon"></i></span>
     }

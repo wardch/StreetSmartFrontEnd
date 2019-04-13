@@ -21,7 +21,6 @@ class SubmitHighScoreForm extends Component {
       lastName: null,
       email: null,
       dublineseName: null,
-      highScore: 32,
       dublineseNameRef: React.createRef()
     };
   }
@@ -38,20 +37,23 @@ class SubmitHighScoreForm extends Component {
   }
 
   submitHighScore(){
-    let {firstName, lastName, highScore, dublineseName, email} = this.state
+    let {firstName, lastName, dublineseName, email} = this.state
+    console.log("$$$$$".repeat(50));
+    console.log('this.state from sub high score', this.state);
     if(!firstName || !lastName) {
       return alert('Please make sure First Name and Last Name fields are filled in')
     } else {
       axios.post('https://street-smart-dublin-backend.herokuapp.com/api/v1/high_scores', {
         high_score: {
-          high_score: highScore,
+          high_score: this.props.highScore,
           first_name: firstName,
           last_name: lastName,
           email: email,
-          dublineseName: dublineseName
+          dublinese_name: dublineseName
         }
-      }).then(
+      }).then(response => {
         this.props.highScoreSubmitted()
+        }
       )
     }
   }
@@ -59,18 +61,22 @@ class SubmitHighScoreForm extends Component {
   highScoreButttons(isHighScoreSubmitted, highScoreSubmitted){
     if(isHighScoreSubmitted) {
       return (
-        <Button variant="success">
+        <Button variant="success" className='high-score-form__dublinese-button'>
           <i className="fa fa-check" aria-hidden="true"></i> Submitted
         </Button>
         )
     } else {
-      return <Button variant="success" onClick={highScoreSubmitted}>Submit High Score</Button>
+      return <Button variant="success" className='high-score-form__dublinese-button'
+                      onClick={() => this.submitHighScore()}>
+      Submit High Score
+      </Button>
     }
   }
 
+
   render() {
     return(
-      <Form>
+      <Form className='post-game__submit-form'>
         <Row>
           <Col>
             <Form.Label>First Name</Form.Label>
@@ -86,18 +92,21 @@ class SubmitHighScoreForm extends Component {
           </Col>
         </Row>
         <Row>
-          <Button onClick={this.dublineseTheName.bind(this)} variant="primary">Dublinese My Name</Button>
+          <Button className='high-score-form__dublinese-button' onClick={this.dublineseTheName.bind(this)} variant="primary">Dublinese My Name</Button>
         </Row>
         <Row>
           <Col>
             <Form.Label>Name in Dublinese</Form.Label>
-            <Form.Control placeholder="Name in Dublinese" ref={this.state.dublineseNameRef}/>
+            <Form.Control className='post-game__submit-form__dublinese-input'
+                          autoComplete="new-password" placeholder="Name in Dublinese"
+                          ref={this.state.dublineseNameRef}
+                          onChange={e => this.onChangeEvent({dublineseName: e.target.value})}/>
           </Col>
         </Row>
         <Row>
         <ButtonToolbar>
           {this.highScoreButttons(this.props.isHighScoreSubmitted, this.props.highScoreSubmitted)}
-          <Button variant="danger">
+          <Button variant="danger" className='high-score-form__dublinese-button'>
             <Link to='/'>
               Play Again
             </Link>

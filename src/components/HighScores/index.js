@@ -38,7 +38,10 @@ class HighScores extends Component {
      </tr>
      )
     }
-    return highScoreData.high_scores.map((score, idx) => {
+    return highScoreData.high_scores.sort((scoreA, scoreB) => {
+        return parseInt(scoreB.high_score) - parseInt(scoreA.high_score)
+      }
+    ).map((score, idx) => {
         return(
           <tr key={idx}>
             <td>{score.first_name}</td>
@@ -66,7 +69,9 @@ class HighScores extends Component {
           <table className='high-score-table table'>
             <thead>
               <tr>
-                <th colSpan='4' className='high-score-table__title'>High Scores (brains to burn they do)</th>
+                <th colSpan='4' className='high-score-table__title'>High Scores <span>(Brains to burn, they do <span role="img" aria-label="fire">🔥</span>)</span></th>
+              </tr>
+              <tr>
               </tr>
               <tr>
                 <th>First Name</th>
@@ -101,7 +106,7 @@ class HighScores extends Component {
         </Row>
         <Row>
           <Col className='high-scores__play-again-button'>
-            <Button variant="primary" >
+            <Button variant="success" >
               <Link to="/">
                 Play Again
               </Link>
@@ -109,7 +114,6 @@ class HighScores extends Component {
           </Col>
         </Row>
       </div>
-
     );
   }
 }

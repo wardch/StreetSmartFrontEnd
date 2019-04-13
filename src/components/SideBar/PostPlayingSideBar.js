@@ -17,7 +17,7 @@ class PostPlayingSideBar extends Component {
   constructor(props){
     super(props)
     this.state = {
-      show: true,
+      show: false,
       rank: null,
     }
     this.handleShow = () => {
@@ -79,85 +79,34 @@ class PostPlayingSideBar extends Component {
 
   render(){
       return(
-        <div>
-        <Row>
-          <Col xs='6' sm='6' md='6' lg='6'>
-            <div>
-              <h4>Score</h4>
-              <h4>{this.displayScore(this.props.allStreets)}</h4>
-            </div>
-          </Col>
-          <Col>
-            <div>
-            <h4>Timer</h4>
-            <div className="countdown-timer">
-              <div className="countdown-timer__circle-container">
-                <svg>
-                  <circle className='countdown-timer__background-circle'
-                    r="24"
-                    cx="26"
-                    cy="26"/>
-                  <circle
-                    r="24"
-                    cx="26"
-                    cy="26"/>
-                </svg>
-              </div>
-              <div className="countdown-timer__text">
-                {this.displayTime(this.props.gameTimeRemaining)}
-              </div>
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <ul>
-            <li>
-              <Button variant="primary" >
-                <Link to="/">
-                  Play Again
-                </Link>
-              </Button>
-            </li>
-            <li>
-              <Button variant="primary" >
-                <Link to="/high_scores">
-                  View High Scores
-                </Link>
-              </Button>
-            </li>
-            <li><Button onClick={() =>  this.setState({show: true})} variant="primary">View My Score</Button></li>
-          </ul>
-        </Row>
-        <hr/>
-        <Row>
-        <ClickedFeaturesPhotos/>
-        </Row>
-        <Modal
-          show={this.state.show}
-          onHide={this.handleHide}
-          size='lg'
-          aria-labelledby="example-custom-modal-styling-title"
-          >
-          <Modal.Header closeButton>
-          <Modal.Title>
-          {this.formatHeader()}
-          </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-          <p>{this.formatSubHeader()}</p>
-          <hr/>
-          <p>
-            You'd rank {ordinal_suffix_of(this.state.rank)} on the all time Dublin Street Smart leaderboard with a score of {this.calculateHighScore(this.props.gameTimeRemaining, this.props.allStreets)}.
-            Type your name in too publish your score. You can "Dublinese" your name
-            too with the Dublinese-Name-Generator.
-          </p>
-          <div>
-            <SubmitHighScoreForm/>
-          </div>
-          </Modal.Body>
-        </Modal>
+        <div className='sidebar--post-playing-container'>
+          <Row>
+            <h1>Game Finished</h1>
+            <hr/>
+          </Row>
+          <Row>
+            <ul className='sidebar--post-playing-button-ul'>
+              <li>
+                <Button variant="success" >
+                  <Link to="/">
+                    Play Again
+                  </Link>
+                </Button>
+              </li>
+              <li>
+                <Button variant="primary" >
+                  <Link to="/high_scores">
+                    View High Scores
+                  </Link>
+                </Button>
+              </li>
+              <li><Button onClick={() =>  this.setState({show: true})} variant="danger">View My Score</Button></li>
+            </ul>
+          </Row>
+          <Row>
+            <ClickedFeaturesPhotos/>
+            <PostGameModal show={this.state.show} closeModal={() => {this.setState({show: false})}}/>
+          </Row>
         </div>
       )
     }
@@ -166,7 +115,6 @@ class PostPlayingSideBar extends Component {
 const mapStateToProps = state => {
   return {
     allStreets: getAllStreets(state),
-    gameMode: getGameMode(state),
     gameTimeRemaining: getGameTimeRemaining(state)
   }
 }
