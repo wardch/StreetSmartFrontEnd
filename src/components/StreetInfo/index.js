@@ -12,12 +12,14 @@ const displayStreetName = (streetName, gameMode) => {
 
 export default function StreetInfo({featureProperties, gameMode}) {
     let streetImageInfo = streetImages.find(street => street.streetName === featureProperties.streetName)
-    return (
-      <div>
+    if(streetImageInfo) {
+      return (
+        <div>
         <div className='street-info__header'>
-          {displayStreetName(featureProperties.streetName, gameMode)}
+        {displayStreetName(featureProperties.streetName, gameMode)}
         </div>
         <img width={240} src={streetImageInfo.streetUrls[0]} alt={`${featureProperties.streetName}`} />
-      </div>
-    );
+        </div>
+      );
+    }
 }
