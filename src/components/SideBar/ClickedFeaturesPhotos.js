@@ -24,13 +24,24 @@ function ClickedFeaturesPhotos({clickedFeature, gameMode}) {
   if(isEmpty(clickedFeature)) { return null}
   let streetImageInfo = streetImages.find(street => street.streetName === clickedFeature.properties.streetName)
 
-  return (
-      <div className='sidebar__image-container'>
-        <hr/>
-        <h2>{displayStreetName(clickedFeature.properties.streetName, gameMode)}</h2>
-        {displayStreetImages(streetImageInfo.streetUrls)}
-      </div>
-    )
+  if(streetImageInfo) {
+    return (
+        <div className='sidebar__image-container'>
+          <hr/>
+          <h2>{displayStreetName(clickedFeature.properties.streetName, gameMode)}</h2>
+          {displayStreetImages(streetImageInfo.streetUrls)}
+        </div>
+      )
+  } else {
+    return (
+        <div className='sidebar__image-container'>
+          <hr/>
+          <h2>{displayStreetName(clickedFeature.properties.streetName, gameMode)}</h2>
+        </div>
+      )
+  }
+
+
 }
 
 

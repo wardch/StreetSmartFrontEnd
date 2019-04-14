@@ -579,74 +579,6 @@
     {
       "type": "Feature",
       "properties": {
-        "anchor": "top-left",
-        "streetName": "Merrion Street",
-        "centerPoint": "-6.25337,53.3384"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            -6.25367,
-            53.338143
-          ],
-          [
-            -6.252066,
-            53.339732
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "34ca82ad5098d8c600de270e1a6bbf06"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "anchor": "top-right",
-        "streetName": "Exchange Street",
-        "centerPoint": "-6.26821,53.3447"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            -6.269915,
-            53.34495
-          ],
-          [
-            -6.268571,
-            53.345073
-          ],
-          [
-            -6.26844,
-            53.345049
-          ],
-          [
-            -6.268232,
-            53.344957
-          ],
-          [
-            -6.26803,
-            53.344813
-          ],
-          [
-            -6.268221,
-            53.344723
-          ],
-          [
-            -6.268087,
-            53.344453
-          ],
-          [
-            -6.267843,
-            53.344033
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "364b3488c97aa35e7596ce2f5ef6a3fd"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "anchor": "top-right",
         "centerPoint": "-6.26550,53.3366",
         "streetName": "Wexford Street"
@@ -876,7 +808,7 @@
       "type": "Feature",
       "properties": {
         "centerPoint": "-6.25731,53.3362",
-        "streetName": "Saint Stephen Green",
+        "streetName": "Saint Stephen's Green",
         "anchor": "top-left"
       },
       "geometry": {

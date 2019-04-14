@@ -2,15 +2,10 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import ClickedFeaturesPhotos from './ClickedFeaturesPhotos'
 import PostGameModal from './PostGameModal'
-import {getGameTimeRemaining, getAllStreets, getGameMode} from '../../selectors/gameSelectors'
+import {getGameTimeRemaining, getAllStreets} from '../../selectors/gameSelectors'
 import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import { Link } from "react-router-dom";
-import SubmitHighScoreForm from './SubmitHighScoreForm'
-import { ordinal_suffix_of } from '../../utils/index'
 import axios from 'axios'
 
 class PostPlayingSideBar extends Component {

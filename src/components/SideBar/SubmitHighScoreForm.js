@@ -30,16 +30,15 @@ class SubmitHighScoreForm extends Component {
   }
 
   dublineseTheName(){
-    let {firstName, lastName} = this.state
+    let {firstName, lastName, dublineseNameRef} = this.state
     let dublineseName = dublineseMyName(firstName, lastName)
     this.setState({dublineseName: dublineseName})
-    this.state.dublineseNameRef.current.value = dublineseName
+    dublineseNameRef.current.value = dublineseName
+    this.setState({dublineseNameRef})
   }
 
   submitHighScore(){
     let {firstName, lastName, dublineseName, email} = this.state
-    console.log("$$$$$".repeat(50));
-    console.log('this.state from sub high score', this.state);
     if(!firstName || !lastName) {
       return alert('Please make sure First Name and Last Name fields are filled in')
     } else {

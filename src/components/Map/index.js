@@ -5,7 +5,6 @@ import MapGL, {NavigationControl, Popup} from 'react-map-gl';
 import StreetInfo from '../StreetInfo'
 import {defaultMapStyle, defaultMapFeatures, setClickedMapLayer, setInitialMapLayer, setHoveredMapLayer, setGuessedStreetsMapLayer} from './map-style'
 import {featureClicked} from '../../actions/mapActions'
-import {isEmpty} from 'lodash'
 import {getGameMode, getAllStreets} from '../../selectors/gameSelectors'
 
 
@@ -29,7 +28,7 @@ export class Map extends Component {
     viewport: {
       longitude: -6.258614,
       latitude: 53.349810,
-      zoom: 15,
+      zoom: 13,
       bearing: 0,
       pitch: 0
     }
@@ -50,7 +49,6 @@ export class Map extends Component {
 
   _onHover = (event, onStyleChange) => {
     const {features, srcEvent: {offsetX, offsetY}} = event;
-    let {clickedFeature} = this.state
     const hoveredFeature = features && features.find(f => f.layer.id === 'dublin-street-names-hidden');
     const featureProperties = hoveredFeature && hoveredFeature.properties
     let {mapStyle} = this.state
