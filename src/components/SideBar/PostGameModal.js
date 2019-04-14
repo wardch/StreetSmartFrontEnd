@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import SubmitHighScoreForm from './SubmitHighScoreForm'
 import {getAllStreets, getGameTimeRemaining, getGameTimerTotalInitalSeconds} from '../../selectors/gameSelectors'
 import axios from 'axios'
-import { ordinal_suffix_of } from '../../utils/index'
+import { ordinal_suffix_of, fancyTimeFormat } from '../../utils/index'
 
 class PostGameModal extends Component {
   constructor(props, context) {
@@ -43,7 +43,7 @@ class PostGameModal extends Component {
       return `Fair play to ye still! You guessed ${correctGuesses} streets correctly.`
     } else if(this.props.allStreets.every(street => street.guessed)) {
       return `You guessed ${correctGuesses} streets correctly in
-      ${this.props.gameTimerTotalInitialSeconds - this.props.gameTimeRemaining} seconds.`
+      ${fancyTimeFormat(this.props.gameTimerTotalInitialSeconds - this.props.gameTimeRemaining)} seconds.`
     } else {
       return ''
     }

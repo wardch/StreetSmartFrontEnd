@@ -289,44 +289,6 @@
     {
       "type": "Feature",
       "properties": {
-        "anchor": "top-left",
-        "centerPoint": "-6.25892,53.3419",
-        "streetName": "Duke Lane"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            -6.258642,
-            53.342724
-          ],
-          [
-            -6.258617,
-            53.342614
-          ],
-          [
-            -6.258701,
-            53.342507
-          ],
-          [
-            -6.258926,
-            53.341881
-          ],
-          [
-            -6.259152,
-            53.341911
-          ],
-          [
-            -6.259419,
-            53.341068
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "12d32e117c009d410633cd420c409af0"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "anchor": "top",
         "streetName": "Fleet Street",
         "centerPoint": "-6.26140,53.3457"
@@ -1497,18 +1459,6 @@
         "type": "LineString"
       },
       "id": "67e0e1cadb37317cddf4f53970c6dccd"
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          -6.297903,
-          53.361595
-        ],
-        "type": "Point"
-      },
-      "id": "69e77b8afb46621c787a61917b17f49c"
     },
     {
       "type": "Feature",
@@ -3043,22 +2993,6 @@
         "type": "LineString"
       },
       "id": "fb20f506cea546a6a0f904157e8faa80"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "short_code": "IE-DU",
-        "wikidata": "Q1761",
-        "place_name": "Dublin, Ireland"
-      },
-      "geometry": {
-        "coordinates": [
-          -6.26583,
-          53.3425
-        ],
-        "type": "Point"
-      },
-      "id": "place.13559809873772470"
     }
   ],
   "type": "FeatureCollection"
