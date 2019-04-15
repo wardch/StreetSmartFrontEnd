@@ -1,9 +1,21 @@
 import {fromJS} from 'immutable';
-import MAP_FEATURES from '../../constants/geojsonFeatures.json';
+import MAP_FEATURES_EASY from '../../constants/geojsonFeaturesEasy.json';
+import MAP_FEATURES_MEDIUM from '../../constants/geojsonFeaturesMedium.json';
+import MAP_FEATURES_HARD from '../../constants/geojsonFeaturesHard.json';
 import MAP_STYLE_AT_THE_TIME from '../../constants/style.json'
 import {isEmpty} from 'lodash'
-export const defaultMapFeatures = fromJS(MAP_FEATURES)
+// export const defaultMapFeatures = fromJS(MAP_FEATURES_EASY)
 export const defaultMapStyle = fromJS(MAP_STYLE_AT_THE_TIME)
+
+export const getDefaultMapFeatures = (difficulty) => {
+  if(difficulty === 'easy') {
+    return fromJS(MAP_FEATURES_EASY)
+  } else if (difficulty === 'medium') {
+    return fromJS(MAP_FEATURES_MEDIUM)
+  } else {
+    return fromJS(MAP_FEATURES_HARD)
+  }
+}
 
 const initialStreetNameLayer = {
     "id": "dublin-street-names",
@@ -46,10 +58,10 @@ const hoverStreetNameLayer = {
 };
 
 
-export const setInitialMapLayer = () => {
+export const setInitialMapLayer = (difficulty) => {
   let data = {
        "type": "FeatureCollection",
-       "features": defaultMapFeatures.get("features")
+       "features": getDefaultMapFeatures(difficulty).get("features")
     }
 
   let mapRealStartingOff = defaultMapStyle
@@ -88,11 +100,11 @@ export const setInitialMapLayer = () => {
             .set('layers', mapClickedStreetLayer.get('layers').push(guessedStreetsMapLayer));
 }
 
-export const setClickedMapLayer = (clickedFeature, mapStyle) => {
+export const setClickedMapLayer = (clickedFeature, mapStyle, difficulty) => {
   let featureToAdd
 
   if(!isEmpty(clickedFeature)) {
-    featureToAdd = defaultMapFeatures.get("features").find((feature) => {
+    featureToAdd = getDefaultMapFeatures(difficulty).get("features").find((feature) => {
         return feature.get('properties').get('streetName') === clickedFeature.properties.streetName
       })
   } else {
@@ -107,11 +119,11 @@ export const setClickedMapLayer = (clickedFeature, mapStyle) => {
   return mapStyle.setIn(['sources', 'dublin-street-names-clicked'], fromJS({type: 'geojson', "data": data}))
 }
 
-export const setHoveredMapLayer = (hoveredFeature, mapStyle) => {
+export const setHoveredMapLayer = (hoveredFeature, mapStyle, difficulty) => {
   let featureToAdd
 
   if(hoveredFeature) {
-    featureToAdd = defaultMapFeatures.get("features").find((feature) => {
+    featureToAdd = getDefaultMapFeatures(difficulty).get("features").find((feature) => {
         return feature.get('properties').get('streetName') === hoveredFeature.properties.streetName
       })
   } else {
@@ -128,11 +140,11 @@ export const setHoveredMapLayer = (hoveredFeature, mapStyle) => {
       .setIn(['sources', 'dublin-street-names-hover'], fromJS({type: 'geojson', "data": data}))
 }
 
-export const setGuessedStreetsMapLayer = (allStreets, mapStyle) => {
+export const setGuessedStreetsMapLayer = (allStreets, mapStyle, difficulty) => {
   let featuresToAdd = allStreets.filter((street) => {
       return street.guessed
     }).map((street) => {
-      return defaultMapFeatures.get("features").find((feature) => {
+      return getDefaultMapFeatures(difficulty).get("features").find((feature) => {
           return feature.get('properties').get('streetName') === street.streetName
         })
       })

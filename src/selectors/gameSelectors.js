@@ -7,6 +7,11 @@ export const getGameMode = createSelector(
   game => game.gameMode
 )
 
+export const getGameDifficulty = createSelector(
+  gameSelector,
+  game => game.gameDifficulty
+)
+
 export const getGameTimerTotalInitalSeconds = createSelector(
   gameSelector,
   game => game.gameTimerTotalInitialSeconds

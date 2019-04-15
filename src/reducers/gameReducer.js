@@ -1,4 +1,4 @@
-import {defaultMapFeatures} from '../components/Map/map-style'
+import {getDefaultMapFeatures} from '../components/Map/map-style'
 import * as transform from './transform';
 
 export default(state = initialState, action) => {
@@ -19,13 +19,15 @@ export default(state = initialState, action) => {
       return {...state, ...initialState}
     case 'HIGH_SCORE_SUBMITTED':
       return {...state, isHighScoreSubmitted: true}
+    case 'DIFFICULTY_SELECTED':
+      return transform.difficultySelected(state, action.payload);
     default:
       return state
   }
 }
 
-const initialAllStreets = () => {
-  return defaultMapFeatures.get('features').map((feature) => {
+export const initialAllStreets = (difficulty = 'easy') => {
+  return getDefaultMapFeatures(difficulty).get('features').map((feature) => {
       return {
         streetName: feature.get('properties').get('streetName'),
         guessed: false,
@@ -35,8 +37,9 @@ const initialAllStreets = () => {
 
 const initialState = {
     gameMode: 'explore',
-    gameTimerTotalInitialSeconds:  900,
-    gameTimeRemaining: 900,
+    gameDifficulty: 'easy',
+    gameTimerTotalInitialSeconds:  300,
+    gameTimeRemaining: 300,
     selectionBoxStyle: {},
     isHighScoreSubmitted: false,
     streets: {

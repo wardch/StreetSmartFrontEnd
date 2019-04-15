@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 import './map.sass'
 import MapGL, {NavigationControl, Popup} from 'react-map-gl';
 import StreetInfo from '../StreetInfo'
-import {defaultMapStyle, defaultMapFeatures, setClickedMapLayer, setInitialMapLayer, setHoveredMapLayer, setGuessedStreetsMapLayer} from './map-style'
+import {defaultMapStyle, setClickedMapLayer, setInitialMapLayer, setHoveredMapLayer, setGuessedStreetsMapLayer, getDefaultMapFeatures} from './map-style'
 import {featureClicked} from '../../actions/mapActions'
-import {getGameMode, getAllStreets} from '../../selectors/gameSelectors'
+import {getGameMode, getAllStreets, getGameDifficulty} from '../../selectors/gameSelectors'
 
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiY2hhcmxpZXdhcmQyMyIsImEiOiJjanI5ZnA3Y2owZmc4M3luMDFxeGgzem1tIn0.YYMSsXBnOInWWr2KCLRDcw';
@@ -20,7 +20,7 @@ const navStyle = {
 export class Map extends Component {
   state = {
     mapStyle: defaultMapStyle,
-    mapFeatures: defaultMapFeatures,
+    mapFeatures: getDefaultMapFeatures(this.props.gameDifficulty),
     data: null,
     hoveredFeature: null,
     clickedFeature: {},
@@ -35,7 +35,7 @@ export class Map extends Component {
   };
 
   _setStartLayer = () => {
-    this.setState({mapStyle: setInitialMapLayer()});
+    this.setState({mapStyle: setInitialMapLayer(this.props.gameDifficulty)});
   }
 
   _onViewportChange = viewport => {
@@ -52,7 +52,7 @@ export class Map extends Component {
     const hoveredFeature = features && features.find(f => f.layer.id === 'dublin-street-names-hidden');
     const featureProperties = hoveredFeature && hoveredFeature.properties
     let {mapStyle} = this.state
-    let newStyle = setHoveredMapLayer(hoveredFeature, mapStyle)
+    let newStyle = setHoveredMapLayer(hoveredFeature, mapStyle, this.props.gameDifficulty)
     this.setState({mapStyle: newStyle});
     this.setState({featureProperties: featureProperties});
     this.setState({hoveredFeature, x: offsetX, y: offsetY});
@@ -65,7 +65,7 @@ export class Map extends Component {
     const featureProperties = clickedFeature && clickedFeature.properties
     this.props.featureClicked(clickedFeature)
     let {mapStyle} = this.state
-    let newStyle = setClickedMapLayer(clickedFeature, mapStyle)
+    let newStyle = setClickedMapLayer(clickedFeature, mapStyle, this.props.gameDifficulty)
     this.setState({mapStyle: newStyle});
     this.setState({clickedFeature, x: offsetX, y: offsetY});
     this.setState({featureProperties});
@@ -91,14 +91,14 @@ export class Map extends Component {
   componentWillReceiveProps(nextProps){
     let {mapStyle} = this.state
     let {allStreets} = nextProps
-    let newStyle = setGuessedStreetsMapLayer(allStreets, mapStyle)
+    let newStyle = setGuessedStreetsMapLayer(allStreets, mapStyle, this.props.gameDifficulty)
     this.setState({mapStyle: newStyle});
   }
 
   componentDidUpdate(prevProps){
     if(this.props.gameMode !== prevProps.gameMode){
       let {mapStyle} = this.state
-      let newStyle = setClickedMapLayer({}, mapStyle)
+      let newStyle = setClickedMapLayer({}, mapStyle, this.props.gameDifficulty)
       this.setState({mapStyle: newStyle});
     }
   }
@@ -137,7 +137,8 @@ Map.propTypes = {}
 const mapStateToProps = state => {
   return {
     gameMode: getGameMode(state),
-    allStreets: getAllStreets(state)
+    allStreets: getAllStreets(state),
+    gameDifficulty: getGameDifficulty(state)
   }
 }
 

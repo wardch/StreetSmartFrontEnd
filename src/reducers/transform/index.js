@@ -4,6 +4,7 @@ import playGameClicked from './PLAY_GAME_CLICKED';
 import selectionGuess from './SELECTION_GUESS';
 import keyDownSelectionBox from './KEY_DOWN_SELECTION_BOX';
 import timeRemaingOnGameEnd from './TIME_REMAINING_ON_GAME_END';
+import difficultySelected from './DIFFICULTY_SELECTED';
 
 export {
   unguessedStreetsLoaded,
@@ -11,5 +12,6 @@ export {
   playGameClicked,
   selectionGuess,
   keyDownSelectionBox,
-  timeRemaingOnGameEnd
+  timeRemaingOnGameEnd,
+  difficultySelected
 };

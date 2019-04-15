@@ -1,10 +1,10 @@
 import {connect} from 'react-redux'
 import React, { Component } from 'react';
-import {homePageLoaded} from '../../actions/homePageLoaded'
+import {homePageLoaded, difficultySelected} from '../../actions/homePageActions'
 import { Link } from "react-router-dom";
 import '../../App.css';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
 import './app.sass'
 
 class App extends Component {
@@ -25,18 +25,34 @@ class App extends Component {
             of<br/>
             aul Dublin town?
           </p>
-          <ButtonToolbar className='app__button-toolbar'>
-            <Button variant="success">
+          <ul className='app_button-ul'>
+            <li>
+              <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Difficulty
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+              <Dropdown.Item onClick={() => this.props.difficultySelected('easy')} className='easy-dropdown'>Easy (30 Streets)</Dropdown.Item>
+              <Dropdown.Item onClick={() => this.props.difficultySelected('medium')} className='medium-dropdown'>Medium (60 Streets)</Dropdown.Item>
+              <Dropdown.Item onClick={() => this.props.difficultySelected('hard')}  className='hard-dropdown'>Hard / Proper Dub! (95 Streets)</Dropdown.Item>
+              </Dropdown.Menu>
+              </Dropdown>
+            </li>
+            <li>
+              <Button variant="success">
               <Link to='/game'>
-                Play Game
+              Play Game
               </Link>
-            </Button>
-            <Button variant="danger">
+              </Button>
+            </li>
+            <li>
+              <Button variant="danger">
               <Link to='/high_scores'>
-                View High Scores
+              View High Scores
               </Link>
-            </Button>
-          </ButtonToolbar>
+              </Button>
+            </li>
+          </ul>
         </header>
       </div>
     );
@@ -50,7 +66,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  homePageLoaded: () => dispatch(homePageLoaded())
+  homePageLoaded: () => dispatch(homePageLoaded()),
+  difficultySelected: (difficulty) => dispatch(difficultySelected(difficulty))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

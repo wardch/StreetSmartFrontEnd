@@ -1,0 +1,917 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Westmoreland Street",
+        "centerPoint": "-6.25914,53.3453",
+        "anchor": "top-left"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.259148,
+            53.347024
+          ],
+          [
+            -6.259138,
+            53.344822
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "020f372f2025b77662db9f1865987477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "streetName": "Wicklow Street",
+        "centerPoint": "-6.25738,53.3459"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.259636,
+            53.342598
+          ],
+          [
+            -6.261108,
+            53.342996
+          ],
+          [
+            -6.262055,
+            53.343045
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "052a79231fdecb8a23af7b1c7e373d9b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Amiens Street",
+        "anchor": "top-left",
+        "centerPoint": "-6.25105,53.3497"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.252246,
+            53.34939
+          ],
+          [
+            -6.251499,
+            53.349412
+          ],
+          [
+            -6.25107,
+            53.349713
+          ],
+          [
+            -6.250044,
+            53.351361
+          ],
+          [
+            -6.24941,
+            53.352274
+          ],
+          [
+            -6.248608,
+            53.352964
+          ],
+          [
+            -6.246724,
+            53.354712
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "08a9695ef9974c075bb137db3428264e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Suffolk Street",
+        "anchor": "top-right",
+        "centerPoint": "-6.25977,53.3434"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.260882,
+            53.343839
+          ],
+          [
+            -6.259416,
+            53.343255
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "08f53028f305bed290df59accd71dcdc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Grafton Street",
+        "centerPoint": "-6.25738,53.3459",
+        "anchor": "left"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.259484,
+            53.344489
+          ],
+          [
+            -6.25939,
+            53.34421
+          ],
+          [
+            -6.259191,
+            53.343917
+          ],
+          [
+            -6.259378,
+            53.343261
+          ],
+          [
+            -6.259764,
+            53.342242
+          ],
+          [
+            -6.260875,
+            53.34063
+          ],
+          [
+            -6.260688,
+            53.339855
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "0c220534b0915b1bb1598574068e0fcc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top",
+        "streetName": "Fleet Street",
+        "centerPoint": "-6.26140,53.3457"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.261837,
+            53.345652
+          ],
+          [
+            -6.25918,
+            53.345834
+          ],
+          [
+            -6.257382,
+            53.345905
+          ],
+          [
+            -6.257208,
+            53.345897
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "1533332f72b7efa693fe247a30af1570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "streetName": "Camden Street",
+        "centerPoint": "-6.26529,53.3341"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.265446,
+            53.336384
+          ],
+          [
+            -6.265176,
+            53.335532
+          ],
+          [
+            -6.265296,
+            53.334113
+          ],
+          [
+            -6.265086,
+            53.333588
+          ],
+          [
+            -6.264847,
+            53.332592
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "23f2eb9a662b9213ea67edc690990d37"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "right",
+        "centerPoint": "-6.26330,53.3469",
+        "streetName": "Liffey Street"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.264429,
+            53.349151
+          ],
+          [
+            -6.263849,
+            53.347902
+          ],
+          [
+            -6.263642,
+            53.347902
+          ],
+          [
+            -6.2632,
+            53.346608
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "265dc7260477090d65cf164d0e86fb39"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "streetName": "Capel Street",
+        "centerPoint": "-6.26825,53.3470"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.270078,
+            53.351042
+          ],
+          [
+            -6.269839,
+            53.350928
+          ],
+          [
+            -6.269779,
+            53.3506
+          ],
+          [
+            -6.269456,
+            53.350243
+          ],
+          [
+            -6.269217,
+            53.349608
+          ],
+          [
+            -6.268381,
+            53.347338
+          ],
+          [
+            -6.267878,
+            53.346068
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "2c8cb2583c662c10fa7c4054814197c6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "centerPoint": "-6.26550,53.3366",
+        "streetName": "Wexford Street"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.265834,
+            53.337627
+          ],
+          [
+            -6.265431,
+            53.336403
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "39f033603018bf8d63f0b920c8cf129a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-left",
+        "streetName": "Pembroke Street",
+        "centerPoint": "-6.25388,53.3349"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.255236,
+            53.334431
+          ],
+          [
+            -6.253901,
+            53.334881
+          ],
+          [
+            -6.252071,
+            53.336894
+          ],
+          [
+            -6.251369,
+            53.337609
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "3b5c0d492df5dce1f110daabb634c4d0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Exchequer Street",
+        "centerPoint": "-6.26421,53.3430",
+        "anchor": "top-right"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.262049,
+            53.34306
+          ],
+          [
+            -6.264457,
+            53.343
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "4163b91666b71f5285f91e5a58b9f12a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "streetName": "Pearse Street",
+        "centerPoint": "-6.24453,53.3432"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.257421,
+            53.345613
+          ],
+          [
+            -6.256308,
+            53.345561
+          ],
+          [
+            -6.254694,
+            53.345196
+          ],
+          [
+            -6.246143,
+            53.34349
+          ],
+          [
+            -6.244572,
+            53.343203
+          ],
+          [
+            -6.23866,
+            53.342448
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "41e1af44fc55879b3acbc41dceb49f36"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Lesson Street",
+        "centerPoint": "-6.25358,53.3328",
+        "anchor": "top-right"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.2573,
+            53.336172
+          ],
+          [
+            -6.256778,
+            53.335894
+          ],
+          [
+            -6.252909,
+            53.332201
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "459a0904bd2a1f3665834a0dedc63268"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top",
+        "streetName": "Dame Street",
+        "centerPoint": "-6.26685,53.3441"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.267244,
+            53.344117
+          ],
+          [
+            -6.266262,
+            53.344178
+          ],
+          [
+            -6.262475,
+            53.344239
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "45f9922dbdd3d31dd0afe995df1e331e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Harcourt Street",
+        "anchor": "top-right",
+        "centerPoint": "-6.26300,53.3338"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.262922,
+            53.332711
+          ],
+          [
+            -6.262605,
+            53.332995
+          ],
+          [
+            -6.263021,
+            53.333858
+          ],
+          [
+            -6.263002,
+            53.334095
+          ],
+          [
+            -6.263239,
+            53.334627
+          ],
+          [
+            -6.263378,
+            53.335644
+          ],
+          [
+            -6.263299,
+            53.336543
+          ],
+          [
+            -6.263101,
+            53.337087
+          ],
+          [
+            -6.262704,
+            53.337572
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "52a5dd1c10f4fede2a5d55ca890dbe60"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "streetName": "Jervais Street",
+        "centerPoint": "-6.26593,53.3468"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.267191,
+            53.350139
+          ],
+          [
+            -6.266214,
+            53.347596
+          ],
+          [
+            -6.265742,
+            53.346285
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "5303a8de962ddf3b6d62c9aafbdebef7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "streetName": "Baggot Street",
+        "centerPoint": "-6.24634,53.3350"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.253645,
+            53.338161
+          ],
+          [
+            -6.251129,
+            53.337619
+          ],
+          [
+            -6.24899,
+            53.336812
+          ],
+          [
+            -6.246458,
+            53.335136
+          ],
+          [
+            -6.245671,
+            53.334411
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "57dacedb751516f342ed65befc189f01"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "D'Olier Street",
+        "centerPoint": "-6.25738,53.3459",
+        "anchor": "top-right"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.258847,
+            53.347024
+          ],
+          [
+            -6.25866,
+            53.346771
+          ],
+          [
+            -6.257143,
+            53.34576
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "6d9ca4cafe9deb2bd881429a64a999ca"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-right",
+        "streetName": "Marlborough Street",
+        "centerPoint": "-6.25753,53.3484"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.259598,
+            53.353386
+          ],
+          [
+            -6.257341,
+            53.347946
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "7cf22fb1a6d2bb9d479fbe92c9ab014a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Abby Street",
+        "centerPoint": "-6.26618,53.3476",
+        "anchor": "top-left"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.268378,
+            53.347285
+          ],
+          [
+            -6.261251,
+            53.348185
+          ],
+          [
+            -6.256475,
+            53.348922
+          ],
+          [
+            -6.254365,
+            53.349309
+          ],
+          [
+            -6.253612,
+            53.349633
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "9d71884a9744c22f3782f9bad0b7f86f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "O'Connell Street",
+        "centerPoint": "-6.25947, 53.3483",
+        "anchor": "top-right"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.261377,
+            53.352678
+          ],
+          [
+            -6.260283,
+            53.350065
+          ],
+          [
+            -6.259124,
+            53.347516
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "9da76693e57aef29866f74604fe74115"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Talbot Street",
+        "centerPoint": "-6.257586, 53.350229",
+        "anchor": "top-left"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.258019,
+            53.350173
+          ],
+          [
+            -6.253546,
+            53.350881
+          ],
+          [
+            -6.25341,
+            53.35089
+          ],
+          [
+            -6.252988,
+            53.350958
+          ],
+          [
+            -6.252802,
+            53.350962
+          ],
+          [
+            -6.252116,
+            53.351073
+          ],
+          [
+            -6.252045,
+            53.351137
+          ],
+          [
+            -6.250587,
+            53.351333
+          ],
+          [
+            -6.250351,
+            53.351431
+          ],
+          [
+            -6.250151,
+            53.351423
+          ],
+          [
+            -6.24993,
+            53.351389
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "a6c39c0a7993333b20b524e3d6034593"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "left",
+        "streetName": "Drury Street",
+        "centerPoint": "-6.26393,53.3414"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.26287,
+            53.34303
+          ],
+          [
+            -6.26408,
+            53.341204
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "b57e964f3c65fee971af830bb1769878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-left",
+        "centerPoint": "-6.26610,53.3386",
+        "streetName": "Angier Street"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.265412,
+            53.341437
+          ],
+          [
+            -6.265612,
+            53.34065
+          ],
+          [
+            -6.266082,
+            53.338595
+          ],
+          [
+            -6.26609,
+            53.338383
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "bea4aa2ebd9efa936ca9d5ebef0eada8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "centerPoint": "-6.26520,53.3417",
+        "streetName": "South Great George's Street",
+        "anchor": "top-left"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.26446,
+            53.344185
+          ],
+          [
+            -6.264431,
+            53.34289
+          ],
+          [
+            -6.264605,
+            53.342209
+          ],
+          [
+            -6.265419,
+            53.341463
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "d7fe3e12409364b6794f0bbcb234a140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "left",
+        "centerPoint": "-6.25868,53.3399",
+        "streetName": "Dawson Street"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.258812,
+            53.339458
+          ],
+          [
+            -6.257769,
+            53.342942
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "e16eeded983835a9ffb2c8c63511a069"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "anchor": "top-left",
+        "streetName": "Henry Street",
+        "centerPoint": "-6.26403,53.3492"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.264418,
+            53.349158
+          ],
+          [
+            -6.263491,
+            53.349288
+          ],
+          [
+            -6.261981,
+            53.349552
+          ],
+          [
+            -6.260373,
+            53.34979
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "e312182522af51fe43e1273d127108bf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Tara Street",
+        "anchor": "left",
+        "centerPoint": "-6.25514,53.3456"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.255016,
+            53.347549
+          ],
+          [
+            -6.255122,
+            53.345195
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "ef2d9b2b449e1de3198c29c52fc87bba"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "streetName": "Nassau Street",
+        "anchor": "top",
+        "centerPoint": "-6.25517,53.3423"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            -6.254565,
+            53.342181
+          ],
+          [
+            -6.257643,
+            53.342918
+          ],
+          [
+            -6.259362,
+            53.34327
+          ]
+        ],
+        "type": "LineString"
+      },
+      "id": "fa4efedfc753c742f2eb9968dee80487"
+    }
+  ],
+  "type": "FeatureCollection"
+}
