@@ -27,7 +27,7 @@
       "properties": {
         "anchor": "top-right",
         "streetName": "Wicklow Street",
-        "centerPoint": "-6.25738,53.3459"
+        "centerPoint": "-6.26003,53.3427"
       },
       "geometry": {
         "coordinates": [
@@ -405,7 +405,7 @@
     {
       "type": "Feature",
       "properties": {
-        "streetName": "Lesson Street",
+        "streetName": "Leeson Street",
         "centerPoint": "-6.25358,53.3328",
         "anchor": "top-right"
       },
@@ -508,7 +508,7 @@
       "type": "Feature",
       "properties": {
         "anchor": "top-right",
-        "streetName": "Jervais Street",
+        "streetName": "Jervis Street",
         "centerPoint": "-6.26593,53.3468"
       },
       "geometry": {

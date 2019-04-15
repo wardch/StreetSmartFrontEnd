@@ -154,7 +154,7 @@ export const streetImages =
 "https://upload.wikimedia.org/wikipedia/commons/f/f3/Park_in_Dublin_St_Stephen%27s_Green_aerial_%2822112994396%29.jpg",
 "https://upload.wikimedia.org/wikipedia/commons/a/a1/St._Stephens_Green_Shopping_Centre_%28Interior%29.jpg"
  ]},
-{"streetName": "Lesson Street",
+{"streetName": "Leeson Street",
  "streetUrls": [
 "https://upload.wikimedia.org/wikipedia/commons/5/58/Lower_Leeson_Street%2C_Dublin%2C_Ireland.jpg",
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP3uZH2924N6faZ7IvnXqSkHxFKmBuLhRtM_CvNTErhhQPsmX1EQ",
@@ -186,7 +186,7 @@ export const streetImages =
 "https://upload.wikimedia.org/wikipedia/commons/d/da/Luas_Tram_at_Harcourt_Street%2C_Dublin._-_panoramio.jpg",
 "https://farm5.staticflickr.com/4653/39631389655_12d12a8374_b.jpg"
  ]},
-{"streetName": "Jervais Street",
+{"streetName": "Jervis Street",
  "streetUrls": [
 "https://upload.wikimedia.org/wikipedia/commons/a/a5/Jervis_Street_Hospital%2C_Dublin.JPG",
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7VwPLvX_hgLePW6kLeC1NNs1p8nKyoznIrstQsgQw181WHCCi"
@@ -232,7 +232,7 @@ export const streetImages =
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw-T71cByVUEqM3NJgn4BbZir67do_TlDw5DYJljshpbbdPjRQ",
 "https://farm8.staticflickr.com/7076/7397105502_32c21390bf_b.jpg"
  ]},
-{"streetName": "South CIrcular Road",
+{"streetName": "South Circular Road",
  "streetUrls": [
 "https://c1.staticflickr.com/9/8428/29791589671_f30af5a8f1_b.jpg",
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHkHA3asDAh6jqVljjxTkv6W_qM1wrOMxuFD4xN2oFzcxrgut5",
