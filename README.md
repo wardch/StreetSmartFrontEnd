@@ -1,7 +1,7 @@
 # README
 
 ## Description
-I created this app to help myself learn the streets of Dublin a bit better. The front-end is created with React and Redux, the back-end is a rails app. 
+I created this app to help myself learn the streets of Dublin a bit better. The front-end is created with React and Redux, the back-end is a rails app called [StreetSmartBackEnd](https://github.com/wardch/StreetSmartBackEnd)
 
 ## Deployment
 
